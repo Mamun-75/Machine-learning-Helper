@@ -1,0 +1,20 @@
+import numpy as np
+import math
+import time
+a = np.random.rand(1000000)
+tic = time.time()
+c =    np.exp(a)
+toc = time.time()
+print("vectorized version " + str(1000*(toc - tic)) + "ms")
+#vectorized version 7.519721984863281ms
+#non vectorize way
+c= 0
+u = np.zeros(1000000)
+
+tic  = time.time()
+for i in range(1000000):
+    u[i] = math.exp(a[i])
+
+toc = time.time()
+print("Non vectorized version: " + str(1000*(toc - tic)) + " ms")    
+Non vectorized version: 499.112606048584 ms
