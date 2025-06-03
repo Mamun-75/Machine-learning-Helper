@@ -1,0 +1,40 @@
+import numpy as np
+a = np.random.randn(5)  #this is a bad way to create an array, here dimension is not sure, may generate bugs later
+print(a)
+a.shape
+# (5,) this is a funny shape , not sure either a column vector or row vector, this will cause error or bug
+
+a = np.random.randn(5,1)  #its a good way to define column vector ,,, it will operate bug free as it has a clear dimension dfined
+a.shape
+#(5, 1)
+print(a)
+b = np.random.randn(1,5)
+b.shape
+#(1, 5)
+print(a.T)   #this is how we transpose a matrix
+print(b.T)
+"""
+we should not use rank 1 array
+if we are not sure about dimension, we can use assert function which is a debug tool
+assert condition, "Error message if condition is False"
+assert(a.shape==(5,1))
+What is assert in Python?
+assert is a debugging tool that tests if a condition is True.
+
+If the condition is True → nothing happens.
+
+If the condition is False → Python raises an AssertionError.
+
+its a good way
+
+
+we have another way
+dont feel shy using reshape function
+
+a = a.reshape((5,1))
+it will ensure the dimension, and act as a debug weapon
+
+"""
+
+
+
